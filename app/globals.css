@@ -2,26 +2,167 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@layer utilities {
+  /* .h-screen {
+    height: 100svh;
+  } */
+  .h-120 {
+    height: 120svh;
+    height: 120vh;
+  }
+  .h-80vh {
+    height: 83vh;
+  }
+  .padding-vh-mobile {
+    padding-top: 25vh;
+    padding-bottom: 20vh;
+  }
+  .custom-grid{
+    display: grid;
+    padding: 0 9rem;
+    column-gap: 3rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    height: 100%;
+    width: 100%;
+
+  }
+  .hover-translated-p{
+    transform: translateY(-100%);
+    transition: 0.2s ease all;
+  }
+  .not-hovered-p{
+    transform: translateY(0%);
+    transition: 0.2s ease all;
+  }
+}
+@font-face {
+  font-family: "futura";
+  src: local("futura"),
+    url("../public/font/futura/TheFuture-Light.otf") format("opentype");
+
+  font-weight: 300;
+}
+@font-face {
+  font-family: "futura";
+  src: local("futura"),
+    url("../public/font/futura/TheFuture-Regular.otf") format("opentype");
+
+  font-weight: 400;
+}
+@font-face {
+  font-family: "futura";
+  src: local("futura"),
+    url("../public/font/futura/TheFuture-Medium.otf") format("opentype");
+
+  font-weight: 500;
+}
+@font-face {
+  font-family: "ESFace";
+  src: local("esface"),
+    url("../public/font/es-face/ESFace-Thin.otf") format("opentype");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "ESFace";
+  src: local("esface"),
+    url("../public/font/es-face/ESFace-ExtraLight.otf") format("opentype");
+  font-weight: 200;
+}
+.ESFace {
+  font-family: "ESFace";
+}
+html {
+  font-size: 62.5%;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+header.home {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.72) -60%,
+    rgba(0, 0, 0, 0) 95.67%
+  );
+}
+a,
+p,h1 {
+  font-family: "futura";
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+h2,
+h3,
+h4,
+h5 {
+  font-family: "ESFace";
+}
+
+/* LANGUAGE OVERLAY */
+
+.language-overlay {
+  background: rgba(50, 49, 47, 0.5);
+
+  backdrop-filter: blur(16px);
+  padding: 42px 9px 6px 24px;
+  display: flex;
+  align-items: flex-end;
+  text-align: center;
+  border-radius: 6px;
+  top: 1.8rem;
+  right: 0.5rem;
+}
+
+.icon-langue.overlay {
+  top: 3.9rem;
+}
+.icon-langue.overlay .language-overlay {
+  padding: 42px 19px 6px 24px;
+}
+
+.language-overlay p {
+  font-size: 10px;
+  line-height: 90%;
+  font-weight: 400px;
+  padding-bottom: 1.2rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fcfbf8;
+}
+
+@media (min-width: 768px) {
+  .language-overlay {
+    top: -1.2rem;
+    right: -0.5rem;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Fin language overlay  */
+
+/* button rollup */
+.rollupHover p{
+  transform: translateY(0%);
+  transition: 0.2s ease all;
+  
+}
+.rollupHover .first{
+  background: #F7A674;
+border: 1px solid #F7A674;
+}
+.rollupHover {
+  transition: 0.2s ease all;
+}
+@media (min-width: 768px) {
+.rollupHover:hover p{
+  transform: translateY(-100%);
+  transition: 0.2s ease all;
+}
+}
+
+
+/* NFT */
+
+.nft .grid-item:nth-child(2) {
+  grid-column-start: 7;
+  grid-column-end: 11;
 }
