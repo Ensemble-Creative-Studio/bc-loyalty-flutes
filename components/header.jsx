@@ -10,11 +10,10 @@ import icon from "../public/icon.svg";
 import v from "../public/v.svg";
 import v2 from "../public/v-2.svg";
 
-export default function Header({  }) {
+export default function Header({}) {
   const [hideHeader, setHideHeader] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
   const { language, setLanguage } = useContext(AnimationContext);
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,15 +30,10 @@ export default function Header({  }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-
-
   const handleLanguageChange = (languageCode) => {
     setLanguage(languageCode);
     setShowOverlay(false);
-   
   };
-
-
 
   return (
     <div
@@ -54,7 +48,7 @@ export default function Header({  }) {
           transition: "transform 0.2s ease",
         }}
       >
-<div className="md:flex-1"></div>
+        <div className="flex-1"></div>
         <div className="logo w-28 h-28 md:h-48 md:w-48 md:flex-1 ">
           <Image
             className="w-full h-full object-contain"
@@ -75,43 +69,40 @@ export default function Header({  }) {
           />
           {showOverlay && (
             <div className="language-overlay absolute bg-black flex flex-col">
-             <div className="flex">
-              <p
-                onClick={() => handleLanguageChange("en")}
-                className={language === 'en' ? "active" : ""}
-                style={{ opacity: language === 'en' ? 1 : 0.3 }}
-              >
-                English
-              </p>
-              {language === 'en' && (
-                <Image
-                  className="w-4 h-4 ml-2 object-contain"
-                  priority
-                  src={v}
-                  alt="Logo Buffet Crampon"
-                />
-              )}
-            </div>
-            <div className="flex">
-              <p
-                onClick={() => handleLanguageChange("fr")}
-                className={language === 'fr' ? "active" : ""}
-                style={{ opacity: language === 'fr' ? 1 : 0.3 }}
-              >
-                Français
-              </p>
-              {language === 'fr' && (
-                <Image
-                  className="w-4 h-4 ml-2 object-contain"
-                  priority
-                  src={v}
-                  alt="Logo Buffet Crampon"
-                />
-              )}
-            </div>
-           
-          
-     
+              <div className="flex">
+                <p
+                  onClick={() => handleLanguageChange("en")}
+                  className={language === "en" ? "active" : ""}
+                  style={{ opacity: language === "en" ? 1 : 0.3 }}
+                >
+                  English
+                </p>
+                {language === "en" && (
+                  <Image
+                    className="w-4 h-4 ml-2 object-contain"
+                    priority
+                    src={v}
+                    alt="Logo Buffet Crampon"
+                  />
+                )}
+              </div>
+              <div className="flex">
+                <p
+                  onClick={() => handleLanguageChange("fr")}
+                  className={language === "fr" ? "active" : ""}
+                  style={{ opacity: language === "fr" ? 1 : 0.3 }}
+                >
+                  Français
+                </p>
+                {language === "fr" && (
+                  <Image
+                    className="w-4 h-4 ml-2 object-contain"
+                    priority
+                    src={v}
+                    alt="Logo Buffet Crampon"
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>

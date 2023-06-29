@@ -24,30 +24,6 @@ export default defineConfig({
         S.list()
           .title("Content")
           .items([
-      //       S.listItem()
-      //       .title("Overlay")
-      //       .id("overlay")
-      //       .child(
-      //         // Instead of rendering a list of documents, we render a single
-      //         // document, specifying the `documentId` manually to ensure
-      //         // that we're editing the single instance of the document
-      //         S.document()
-      //           .schemaType("overlay")
-      //           .documentId("overlay")
-      //       ),
-      //  S.divider(),
-            // Our singleton type has a list item with a custom child
-            // S.listItem()
-            //   .title("Header")
-            //   .id("header-info")
-            //   .child(
-            //     // Instead of rendering a list of documents, we render a single
-            //     // document, specifying the `documentId` manually to ensure
-            //     // that we're editing the single instance of the document
-            //     S.document()
-            //       .schemaType("header-info")
-            //       .documentId("header-info")
-            //   ),
               S.listItem()
               .title("Hero")
               .id("hero")
@@ -102,6 +78,17 @@ export default defineConfig({
                 S.document()
                   .schemaType("qrcode")
                   .documentId("qrcode")
+              ),
+              S.listItem()
+              .title("Video Footer")
+              .id("videoFooter")
+              .child(
+                // Instead of rendering a list of documents, we render a single
+                // document, specifying the `documentId` manually to ensure
+                // that we're editing the single instance of the document
+                S.document()
+                  .schemaType("videoFooter")
+                  .documentId("videoFooter")
               ),
               S.listItem()
               .title("Footer")

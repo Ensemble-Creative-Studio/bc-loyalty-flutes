@@ -15,9 +15,9 @@ import {
   getNft,
   getQR,
   getFooter,
-  getPage
+  getPage,
+  getVideo,
 } from "../sanity/sanity-util";
-
 
 export default async function Home() {
   const lang = "fr"; // Set lang variable based on browser language, default to "fr" if not available
@@ -27,19 +27,20 @@ export default async function Home() {
   const avantagesData = await getAvantages();
   const nftData = await getNft();
   const qrData = await getQR();
-
+  const videoData = await getVideo();
   const footerData = await getFooter();
   const pageData = await getPage();
   return (
     <div className="smooth-scroller">
       <AnimationProvider>
-        <div className="relative z-20 mb-52 md:mb-40">
+        <div className="relative z-20 ">
           <Header />
           <Hero heroData={heroData} />
           <Passport passportData={passportData} />
           <Avantages avantagesData={avantagesData} />
           <Nft nftData={nftData} />
           <Qrcode qrData={qrData} />
+          <Hero heroData={videoData} />
           <Footer footerData={footerData} pageData={pageData} />
         </div>
       </AnimationProvider>

@@ -20,6 +20,9 @@ export async function getNft(){
 export async function getQR(){
   return client.fetch(groq`*[_type == 'qrcode']`);
 }
+export async function getVideo(){
+  return client.fetch(groq`*[_type == 'videoFooter']`);
+}
 
 
 export async function getFooter(lang) {

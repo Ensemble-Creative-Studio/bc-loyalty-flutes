@@ -16,18 +16,18 @@ export default  function Footer({footerData,pageData}) {
   
 
   return (
-    <div className="bg-soft-black w-full flex flex-col justify-center h-52  md:px-36 md:flex-row-reverse md:justify-between md:items-center md:h-40">
-      <div className="page__link flex flex-col justify-center md:flex-row md:gap-20">
+    <div className="bg-soft-black w-full flex flex-col justify-center h-52   md:px-36 md:flex-row-reverse md:justify-between md:items-center md:h-40">
+      <div className="page__link flex flex-col justify-center md:flex-row md:gap-20 gap-4">
         {/* Render each page with its name and URL */}
         { overlayDataObj[language]?.map((page) => (
           <div className="text-center  " key={page._id}>
-            <Link className="text-mid-grey md:text-15px " href={page.slug.current}>
+            <Link className="text-mid-grey md:text-15px text-14px-cta  " href={page.slug.current}>
             {page.titre}
             </Link>
           </div>
         ))}
       </div>
-      <p className="text-mid-grey md:text-15px text-center   md:pt-0">© 2023 Groupe Buffet Crampon</p>
+      <p className="text-mid-grey md:text-15px text-center text-14px-cta pt-4  md:pt-0">© 2023 Groupe Buffet Crampon</p>
     </div>
   );
 }

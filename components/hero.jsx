@@ -14,7 +14,7 @@ export default function Hero({ heroData }) {
 
   return (
     <div className="w-full h-80vh ">
-      <div className="custom-grid relative">
+      <div className="md:custom-grid custom-grid-mobile relative">
         <video
           className="object-cover w-full h-full absolute top-0 left-0 -z-10 videoHero scaled object-bottom"
           src={overlayDataObj[language]?.url}
@@ -23,8 +23,8 @@ export default function Hero({ heroData }) {
           autoPlay
           loop
         />
-        <div className="md:col-span-8 flex items-end pb-36">
-        <h1 className="md:text-92px text-soft-white "
+        <div className="md:col-span-8 col-span-11 flex items-end md:pb-36 pb-12">
+        <h1 className="md:text-92px text-41x text-soft-white "
         >{overlayDataObj[language]?.herotext}</h1>
         </div>
 

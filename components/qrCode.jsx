@@ -15,28 +15,28 @@ export default function Qrcode({ qrData }) {
   }
 
   return (
-    <div className="bg-soft-grey md:pt-24 md:pb-24">
-      <div className="custom-grid relative">
-        <div className="md:col-span-5 md:flex md:flex-col md:gap-24">
+    <div className="bg-soft-grey md:pt-24 md:pb-24 pt-20">
+      <div className="md:custom-grid flex flex-col md:px-0 px-6 relative">
+        <div className="md:col-span-5 flex flex-col md:gap-24 gap-24">
           {overlayDataObj[language]?.code.map((code, index) => (
             <div className="flex flex-col  " key={index}>
-              <h4 className="md:text-27px text-soft-black-text md:pb-6">
+              <h4 className="md:text-27px text-17px text-soft-black-text md:pb-6 pb-4">
                 {code.titre}
               </h4>
-              <p className="md:text-18px text-soft-black-text md:pb-12">
+              <p className="md:text-18px text-16px-mobile-normal font-normal text-soft-black-text md:pb-12">
                 {code.text}
               </p>
-              <div className=" md:flex md:items-center  ">
-                <div className="md:flex ">
+              <div className=" flex  md:items-center  ">
+                <div className="flex ">
                   <Link
                     target="_blank"
                     href={code.buttonUrl}
-                    className="relative overflow-hidden bg-bronze border border-bronze    md:hover:bg-white md:transition-all group"
-                  >
-                    <p className=" text-center md:text-12px text-soft-white uppercase  md:py-6 md:px-4 md:group-hover:hover-translated-p transition-all">
+                    className="relative overflow-hidden bg-bronze border border-bronze   md:w-auto md:hover:bg-white md:transition-all group md:ml-0  md:h-auto text-14px-cta md:my-0 my-10 w-full md:mr-0 mr-6"
+                    >
+            <p className=" text-center md:text-15px text-soft-white uppercase  md:p-8  py-8 px-8  md:group-hover:hover-translated-p transition-all">
                       {code?.buttonCertificat}
                     </p>
-                    <p className=" text-center md:text-12px md:text-bronze md:w-full uppercase  md:py-6 md:px-4hidden md:block  md:cursor-pointer md:absolute md:not-hovered-p md:group-hover:hover-translated-p">
+                    <p className=" text-center md:text-15px md:w-full md:text-bronze uppercase md:p-8 hidden md:block  md:cursor-pointer md:absolute md:not-hovered-p md:group-hover:hover-translated-p">
                       {code?.buttonCertificat}
                     </p>
                   </Link>
@@ -45,8 +45,8 @@ export default function Qrcode({ qrData }) {
             </div>
           ))}
         </div>
-        <div className="md:col-start-7 md:col-end-12 md:flex md:flex-col md:gap-12 md:justify-start">
-          <h4 className="md:text-27px text-soft-black-text md:pb-6">
+        <div className="md:col-start-7 md:col-end-12 md:flex md:flex-col md:gap-12 md:justify-start md:pt-0 pt-24">
+          <h4 className="md:text-27px text-17px text-soft-black-text md:pb-6 pb-10 " >
             {overlayDataObj[language]?.titreCarte}
           </h4>
           <div className="w-2/3">
@@ -59,10 +59,10 @@ export default function Qrcode({ qrData }) {
               height={200}
             />
           </div>
-          <div>
+          <div className="md:pt-0 pt-10 md:pb-0 pb-20">
             {overlayDataObj[language]?.avantageCarte.map(
               (avantageCarte, index) => (
-                <p className="md:text-18px text-soft-black-text " key={index}>
+                <p className="md:text-18px text-18px-mobile text-soft-black-text " key={index}>
                   {avantageCarte.titre}
                 </p>
               )

@@ -24,7 +24,14 @@
     grid-template-columns: repeat(12, minmax(0, 1fr));
     height: 100%;
     width: 100%;
-
+  }
+  .custom-grid-mobile{
+    display: grid;
+    padding: 0 1.5rem;
+    column-gap: 1.5rem;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    height: 100%;
+    width: 100%;
   }
   .hover-translated-p{
     transform: translateY(-100%);
