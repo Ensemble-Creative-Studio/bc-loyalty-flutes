@@ -3,7 +3,6 @@ import React, { useState, useRef, useContext } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import arrow from "../public/arrow.svg";
 import { AnimationContext } from "./AnimationContext";
 import { urlForImage } from "../sanity/lib/image";
 export default function Passport({ passportData }) {
@@ -39,9 +38,9 @@ export default function Passport({ passportData }) {
           <Link
             target="_blank"
             href={overlayDataObj[language]?.buttonUrl}
-            className="relative overflow-hidden bg-bronze border border-bronze   2xl:w-2/3 xl:w-5/6 md:w-full md:hover:bg-white md:transition-all group w-2/3 md:ml-0 ml-6 md:h-auto text-14px-cta md:my-0 my-20 "
+            className="relative overflow-hidden bg-bronze border border-bronze   2xl:w-2/3 xl:w-5/6 md:w-full md:hover:bg-white md:transition-all group w-auto md:ml-0 mx-6 md:h-auto text-14px-cta md:my-0 my-20 "
           >
-            <p className=" md:text-center text-left md:text-15px text-soft-white uppercase  md:p-8 py-4 px-8   md:group-hover:hover-translated-p transition-all">
+            <p className=" text-center md:text-15px text-soft-white uppercase  md:p-8  py-8 px-4  md:group-hover:hover-translated-p transition-all">
               {overlayDataObj[language]?.buttonCertificat}
             </p>
             <p className=" text-center md:text-15px md:w-full md:text-bronze uppercase md:p-8 hidden md:block  md:cursor-pointer md:absolute md:not-hovered-p md:group-hover:hover-translated-p">

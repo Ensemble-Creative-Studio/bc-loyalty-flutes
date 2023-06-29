@@ -17,7 +17,7 @@ export default function Nft({ nftData }) {
   return (
     <div className="md:pt-48 md:pb-32 pt-20 px-6 md:px-0">
         <p className="md:text-63px text-27px-narrow font-medium  text-soft-black uppercase md:pl-36 md:pb-8 pb-2" >{overlayDataObj[language]?.titre}</p>
-        <h4 className="md:text-27px text-17px text-soft-black-text md:pl-36 md:pb-6 pb-6">{overlayDataObj[language]?.text}</h4>
+        <h4 className="md:text-27px text-17px text-soft-black-text md:pl-36 md:pb-16 pb-6">{overlayDataObj[language]?.text}</h4>
       <div className="md:custom-grid flex flex-col relative nft md:pt-12 pt-12" >
         {overlayDataObj[language]?.etapes.map((etape, index) => (
         <div className="flex flex-col md:col-span-4 grid-item " key={index}>
