@@ -39,7 +39,7 @@ export default async function Home() {
         <div className="relative z-20 ">
           <Header />
           <Hero heroData={heroData} />
-          <Passport passportData={passportData} overlayData = {overlayData} />
+          <Passport passportData={passportData}  />
           <Avantages avantagesData={avantagesData} />
           <Nft nftData={nftData} />
           <Qrcode qrData={qrData} />

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import { urlForImage } from "@/sanity/lib/image";
 import { AnimationContext } from "./AnimationContext";
-export default function videoFooter({ heroData }) {
+export default function VideoFooter({ heroData }) {
   const { language, setLanguage } = useContext(AnimationContext);
 
   const overlayDataObj = {};

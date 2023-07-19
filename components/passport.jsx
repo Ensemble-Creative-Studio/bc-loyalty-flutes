@@ -12,18 +12,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { AnimationContext } from "./AnimationContext";
 import { urlForImage } from "../sanity/lib/image";
-export default function Passport({ passportData, overlayData }) {
+export default function Passport({ passportData }) {
   const { language, setLanguage } = useContext(AnimationContext);
   const overlayDataObj = {};
   for (let i = 0; i < passportData.length; i++) {
     const entry = passportData[i];
     overlayDataObj[entry.__i18n_lang] = entry;
   }
-  const overlayDataObj2 = {};
-  for (let i = 0; i < overlayData.length; i++) {
-    const entry = passportData[i];
-    overlayDataObj2[entry.__i18n_lang] = entry;
-  }
+
   const dialogTriggerRef = useRef(null);
 
   const handleCertificatButtonClick = () => {
