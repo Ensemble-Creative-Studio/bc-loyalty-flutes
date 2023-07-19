@@ -13,17 +13,15 @@ export default function VideoFooter({ heroData }) {
   }
 
   return (
-    <div className="w-full h-80vh ">
-      <div className="md:custom-grid custom-grid-mobile relative">
+    <div className="w-full md:h-80vh h-full  ">
+      <div className="md:custom-grid block relative">
         <video
-          className="object-cover w-full h-full absolute top-0 left-0  videoHero scaled object-bottom"
+          className="md:object-cover object-contain w-full h-full md:absolute relative  top-0 left-0  videoHero scaled object-bottom"
           src={overlayDataObj[language]?.url}
           controls
           poster=    {urlForImage(heroData[0].image.asset._ref)}
         />
-        <div className="md:col-span-8 col-span-11 flex items-end md:pb-36 pb-12">
-   
-        </div>
+    
 
       </div>
     </div>

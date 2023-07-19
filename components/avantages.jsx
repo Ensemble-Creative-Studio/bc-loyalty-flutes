@@ -1,9 +1,17 @@
 "use client";
 import React, {
-
+useRef,
   useContext,
 
 } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import Image from "next/image";
 import Link from "next/link";
 import { urlForImage } from "@/sanity/lib/image";
@@ -17,6 +25,11 @@ export default function Avantages({ avantagesData }) {
     const entry = avantagesData[i];
     overlayDataObj[entry.__i18n_lang] = entry;
   }
+  const dialogTriggerRef = useRef(null);
+
+  const handleCertificatButtonClick = () => {
+    dialogTriggerRef.current.click();
+  };
 
   return (
     <div className="bg-soft-black md:pt-48 pl-6 md:pl-0">
@@ -44,21 +57,34 @@ export default function Avantages({ avantagesData }) {
       </div>
       <div className="md:h-48 md:flex md:items-center md:justify-center block justify-start ">
         <div className="flex justify-start md:justify-center ">
-        <Link
+        <div
             target="_blank"
             href={overlayDataObj[language]?.buttonUrl}
             className="relative overflow-hidden bg-bronze border border-bronze   md:w-auto md:hover:bg-white md:transition-all group md:ml-0  md:h-auto text-14px-cta md:my-0 my-20 w-full md:mr-0 mr-6"
           >
-            <p className=" text-center md:text-15px text-soft-white uppercase  md:p-8  py-8 px-8  md:group-hover:hover-translated-p transition-all">
+            <p onClick={handleCertificatButtonClick} className=" text-center md:text-15px text-soft-white uppercase  md:p-8  py-8 px-4  md:group-hover:hover-translated-p transition-all">
               {overlayDataObj[language]?.buttonCertificat}
             </p>
-            <p className=" text-center md:text-15px md:w-full md:text-bronze uppercase md:p-8 hidden md:block  md:cursor-pointer md:absolute md:not-hovered-p md:group-hover:hover-translated-p">
+            <p onClick={handleCertificatButtonClick} className=" text-center md:text-15px md:w-full md:text-bronze uppercase md:p-8 hidden md:block  md:cursor-pointer md:absolute md:not-hovered-p md:group-hover:hover-translated-p">
               {overlayDataObj[language]?.buttonCertificat}
             </p>
-          </Link>
+          </div>
     
         </div>
       </div>
+      <Dialog>
+        <DialogTrigger ref={dialogTriggerRef}></DialogTrigger>
+        <DialogContent className='bg-white pb-12 pt-8 px-8 max-w-6xl md:mx-0'>
+          <DialogHeader>
+            <DialogTitle className=" text-center md:text-27px text-2xl text-soft-black uppercase  md:p-2  py-4 px-4  ">      {overlayDataObj[language]?.buttonCertificat}</DialogTitle>
+            <DialogDescription className='md:text-18px text-18px-mobile text-center pt-8'>
+            Veuillez scanner le QR Code inscrit sur la carte accompagnant votre instrument à l'aide de votre appareil mobile.
+
+N’hésitez pas à <a className="underline cursor-pointer" href="mailto:elias.bouallagui@buffetcrampon.com ">nous contacter</a>  si vous avez la moindre question
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

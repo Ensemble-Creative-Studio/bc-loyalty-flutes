@@ -63,10 +63,10 @@ export default function Passport({ passportData }) {
       </div>
       <Dialog>
         <DialogTrigger ref={dialogTriggerRef}></DialogTrigger>
-        <DialogContent className='bg-white py-12 px-24'>
+        <DialogContent className='bg-white pb-12 pt-8 px-8 max-w-6xl md:mx-0'>
           <DialogHeader>
-            <DialogTitle className=" text-center md:text-18px text-soft-black uppercase  md:p-2  py-4 px-4  ">      {overlayDataObj[language]?.buttonCertificat}</DialogTitle>
-            <DialogDescription className='md:text-18px'>
+            <DialogTitle className=" text-center md:text-27px text-2xl text-soft-black uppercase  md:p-2  py-4 px-4  ">      {overlayDataObj[language]?.buttonCertificat}</DialogTitle>
+            <DialogDescription className='md:text-18px text-18px-mobile text-center pt-8'>
             Veuillez scanner le QR Code inscrit sur la carte accompagnant votre instrument à l'aide de votre appareil mobile.
 
 N’hésitez pas à <a className="underline cursor-pointer" href="mailto:elias.bouallagui@buffetcrampon.com ">nous contacter</a>  si vous avez la moindre question
