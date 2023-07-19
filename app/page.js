@@ -6,6 +6,7 @@ import Avantages from "@/components/avantages";
 import Nft from "@/components/nft";
 import Qrcode from "@/components/qrCode";
 import Footer from "../components/footer";
+import VideoFooter from "@/components/videoFooter";
 import { AnimationProvider } from "../components/AnimationContext";
 import {
   getHeader,
@@ -17,6 +18,7 @@ import {
   getFooter,
   getPage,
   getVideo,
+  getOverlay
 } from "../sanity/sanity-util";
 
 export default async function Home() {
@@ -30,17 +32,18 @@ export default async function Home() {
   const videoData = await getVideo();
   const footerData = await getFooter();
   const pageData = await getPage();
+  const overlayData = await getOverlay()
   return (
     <div className="smooth-scroller">
       <AnimationProvider>
         <div className="relative z-20 ">
           <Header />
           <Hero heroData={heroData} />
-          <Passport passportData={passportData} />
+          <Passport passportData={passportData} overlayData = {overlayData} />
           <Avantages avantagesData={avantagesData} />
           <Nft nftData={nftData} />
           <Qrcode qrData={qrData} />
-          <Hero heroData={videoData} />
+          <VideoFooter heroData={videoData} />
           <Footer footerData={footerData} pageData={pageData} />
         </div>
       </AnimationProvider>

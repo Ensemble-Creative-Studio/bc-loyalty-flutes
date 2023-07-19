@@ -1,18 +1,34 @@
 "use client";
 import React, { useState, useRef, useContext } from "react";
-
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import Image from "next/image";
 import Link from "next/link";
 import { AnimationContext } from "./AnimationContext";
 import { urlForImage } from "../sanity/lib/image";
-export default function Passport({ passportData }) {
+export default function Passport({ passportData, overlayData }) {
   const { language, setLanguage } = useContext(AnimationContext);
   const overlayDataObj = {};
   for (let i = 0; i < passportData.length; i++) {
     const entry = passportData[i];
     overlayDataObj[entry.__i18n_lang] = entry;
   }
+  const overlayDataObj2 = {};
+  for (let i = 0; i < overlayData.length; i++) {
+    const entry = passportData[i];
+    overlayDataObj2[entry.__i18n_lang] = entry;
+  }
+  const dialogTriggerRef = useRef(null);
 
+  const handleCertificatButtonClick = () => {
+    dialogTriggerRef.current.click();
+  };
   return (
     <div className=" md:pt-24 md:pb-48 pt-24">
       <div className="md:custom-grid flex flex-col relative ">
@@ -35,20 +51,33 @@ export default function Passport({ passportData }) {
             </p>
           </div>
 
-          <Link
-            target="_blank"
-            href={overlayDataObj[language]?.buttonUrl}
+          <div
+            
             className="relative overflow-hidden bg-bronze border border-bronze   2xl:w-2/3 xl:w-5/6 md:w-full md:hover:bg-white md:transition-all group w-auto md:ml-0 mx-6 md:h-auto text-14px-cta md:my-0 my-20 "
           >
-            <p className=" text-center md:text-15px text-soft-white uppercase  md:p-8  py-8 px-4  md:group-hover:hover-translated-p transition-all">
+            <p    onClick={handleCertificatButtonClick} className=" text-center md:text-15px text-soft-white uppercase  md:p-8  py-8 px-4  md:group-hover:hover-translated-p transition-all">
               {overlayDataObj[language]?.buttonCertificat}
             </p>
-            <p className=" text-center md:text-15px md:w-full md:text-bronze uppercase md:p-8 hidden md:block  md:cursor-pointer md:absolute md:not-hovered-p md:group-hover:hover-translated-p">
+            <p    onClick={handleCertificatButtonClick} className=" text-center md:text-15px md:w-full md:text-bronze uppercase md:p-8 hidden md:block  md:cursor-pointer md:absolute md:not-hovered-p md:group-hover:hover-translated-p">
               {overlayDataObj[language]?.buttonCertificat}
             </p>
-          </Link>
+
+          </div>
         </div>
       </div>
+      <Dialog>
+        <DialogTrigger ref={dialogTriggerRef}></DialogTrigger>
+        <DialogContent className='bg-white py-12 px-24'>
+          <DialogHeader>
+            <DialogTitle className=" text-center md:text-18px text-soft-black uppercase  md:p-2  py-4 px-4  ">      {overlayDataObj[language]?.buttonCertificat}</DialogTitle>
+            <DialogDescription className='md:text-18px'>
+            Veuillez scanner le QR Code inscrit sur la carte accompagnant votre instrument à l'aide de votre appareil mobile.
+
+N’hésitez pas à <a className="underline cursor-pointer" href="mailto:elias.bouallagui@buffetcrampon.com ">nous contacter</a>  si vous avez la moindre question
+            </DialogDescription>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

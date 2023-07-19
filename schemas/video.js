@@ -27,7 +27,11 @@ export default {
         type: 'url',
         title: 'Video URL',
       },
-
+      {
+        name: "image",
+        type: "image",
+        title: "Poster video",
+      },
     ],
   }
   

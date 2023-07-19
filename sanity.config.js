@@ -102,6 +102,18 @@ export default defineConfig({
                   .documentId("footer")
               ),
               S.divider(),
+              S.listItem()
+              .title("Overlay")
+              .id("overlay")
+              .child(
+                // Instead of rendering a list of documents, we render a single
+                // document, specifying the `documentId` manually to ensure
+                // that we're editing the single instance of the document
+                S.document()
+                  .schemaType("overlay")
+                  .documentId("overlay")
+              ),
+              S.divider(),
             // Regular document types
             S.documentTypeListItem("pageFooter").title("Pages légales"),
             // S.documentTypeListItem("author").title("Authors"),

@@ -8,5 +8,6 @@ import avantages from './avantages'
 import nft from './nft'
 import qrcode from './qrcode'
 import pageFooter from './pageFooter'
+import overlay from './overlay'
 import video from './video'
-export const schemaTypes = [blockContent,pet,headerinfo,hero, passport, avantages,nft, qrcode,video, footer, pageFooter]
+export const schemaTypes = [blockContent,pet,headerinfo,hero, passport, avantages,nft, qrcode,video, footer, overlay, pageFooter]
