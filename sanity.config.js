@@ -122,7 +122,7 @@ export default defineConfig({
     visionTool(),
   ], {
     // .. your i18n config, example:
-    languages: ['fr', 'en'],
+    languages: ['fr', 'en', 'de',],
   }),
 
   schema: {

@@ -14,6 +14,26 @@ import { AnimationContext } from "./AnimationContext";
 import { urlForImage } from "../sanity/lib/image";
 export default function Passport({ passportData }) {
   const { language, setLanguage } = useContext(AnimationContext);
+  const translations = {
+    fr: {
+      titre: "OBTENEZ VOTRE CERTIFICAT D’AUTHENTICITÉ",
+      text: "Veuillez scanner le QR Code inscrit sur la carte accompagnant votre instrument à l'aide de votre appareil mobile. N’hésitez pas à ",
+      contact: "nous contacter",
+      suite:'si vous avez la moindre question'
+    },
+    en: {
+      titre: "GET YOUR CERTIFICATE OF AUTHENTICITY",
+      text: "Please scan the QR Code on the card that comes with your instrument using your mobile device. Do not hesitate to",
+      contact: "contact us",
+      suite:'if you have any questions'
+    },
+    de: {
+      titre: "ERHALTEN SIE IHR ECHTHEITSZERTIFIKAT",
+      text: "Bitte scannen Sie mit Ihrem Mobilgerät den QR-Code auf der Karte, die Ihrem Instrument beiliegt. Zögern Sie nicht, uns",
+      contact: "zu kontaktieren",
+      suite:', wenn Sie Fragen haben'
+    },
+  };
   const overlayDataObj = {};
   for (let i = 0; i < passportData.length; i++) {
     const entry = passportData[i];
@@ -65,11 +85,10 @@ export default function Passport({ passportData }) {
         <DialogTrigger ref={dialogTriggerRef}></DialogTrigger>
         <DialogContent className='bg-white pb-12 pt-8 px-8 max-w-6xl md:mx-0'>
           <DialogHeader>
-            <DialogTitle className=" text-center md:text-27px text-2xl text-soft-black uppercase  md:p-2  py-4 px-4  ">      {overlayDataObj[language]?.buttonCertificat}</DialogTitle>
+            <DialogTitle className=" text-center md:text-27px text-2xl text-soft-black uppercase  md:p-2  py-4 px-4  ">      {translations[language]?.titre}</DialogTitle>
             <DialogDescription className='md:text-18px text-18px-mobile text-center pt-8'>
-            Veuillez scanner le QR Code inscrit sur la carte accompagnant votre instrument à l'aide de votre appareil mobile.
 
-N’hésitez pas à <a className="underline cursor-pointer" href="mailto:elias.bouallagui@buffetcrampon.com ">nous contacter</a>  si vous avez la moindre question
+ {translations[language]?.text} <a className="underline cursor-pointer" href="mailto:elias.bouallagui@buffetcrampon.com "> {translations[language]?.contact}</a>  {translations[language]?.suite}
             </DialogDescription>
           </DialogHeader>
         </DialogContent>

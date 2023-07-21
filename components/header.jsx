@@ -71,6 +71,23 @@ export default function Header({}) {
             <div className="language-overlay absolute bg-black flex flex-col">
               <div className="flex">
                 <p
+                  onClick={() => handleLanguageChange("de")}
+                  className={language === "de" ? "active" : ""}
+                  style={{ opacity: language === "de" ? 1 : 0.3 }}
+                >
+                  Deutsch
+                </p>
+                {language === "de" && (
+                  <Image
+                    className="w-4 h-4 ml-2 object-contain"
+                    priority
+                    src={v}
+                    alt="Logo Buffet Crampon"
+                  />
+                )}
+              </div>
+              <div className="flex">
+                <p
                   onClick={() => handleLanguageChange("en")}
                   className={language === "en" ? "active" : ""}
                   style={{ opacity: language === "en" ? 1 : 0.3 }}
