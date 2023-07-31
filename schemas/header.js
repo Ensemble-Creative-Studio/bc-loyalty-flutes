@@ -9,8 +9,8 @@ export default {
   },
   i18n: {
     base: 'fr',
-    languages: ['fr', 'en','de',],
-    fieldNames: {
+    languages: ['fr','en','de','ja'],
+        fieldNames: {
       lang: '__i18n_lang',
       references: '__i18n_refs',
       baseReference: '__i18n_base',

@@ -5,7 +5,8 @@ import { visionTool } from "@sanity/vision"
 import { schemaTypes } from "./schemas"
 import {apiVersion, dataset, projectId} from './sanity/env'
 import {withDocumentI18nPlugin, getDocumentList} from '@sanity/document-internationalization'
-
+import { dashboardTool } from "@sanity/dashboard";
+import { netlifyWidget } from "sanity-plugin-dashboard-widget-netlify";
 import {schema} from './sanity/schema'
 // Define the actions that should be available for singleton documents
 const singletonActions = new Set(["publish", "discardChanges", "restore"])
@@ -120,9 +121,26 @@ export default defineConfig({
           ]),
     }),
     visionTool(),
+    dashboardTool({
+      widgets: [
+        netlifyWidget({
+            title: 'My Netlify deploys',
+            sites: [
+           
+              {
+                title: 'BC - Loyalty',
+                apiId: '7dd58f6f-bc1e-4120-b5c9-f0cd38dc3d3c',
+                buildHookId: '64c7d4e7c9caf116fe130458',
+                name: 'zingy-dango-613832.netlify',
+                url:'https://zingy-dango-613832.netlify.app/'
+              }
+            ]
+        })
+      ]
+    }),
   ], {
     // .. your i18n config, example:
-    languages: ['fr', 'en', 'de',],
+    languages: ['fr', 'en', 'de','ja'],
   }),
 
   schema: {
