@@ -51,7 +51,7 @@ export default function Qrcode({ qrData }) {
         <div className="md:col-span-5 flex flex-col md:gap-24 gap-24">
         {overlayDataObj[language]?.code.map((code, index) => (
   <div className="flex flex-col" key={index}>
-    <h4 className="md:text-27pxNoBold text-17px text-soft-black-text md:pb-6 pb-4 md:w-4/5 font-bold">
+    <h4 className="md:text-27pxNoBold uppercase text-17px text-soft-black-text md:pb-6 pb-4 md:w-4/5 font-bold">
       {code.titre}
     </h4>
     <p className="md:text-18px text-16px-mobile-normal font-normal text-soft-black-text md:pb-12">

@@ -62,7 +62,7 @@ export default function Passport({ passportData }) {
             <h2 className="md:text-48px text-21px text-center md:text-left text-soft-black-text md:pb-16 md:pt-3 pt-16 pb-16">
               {overlayDataObj[language]?.titre}
             </h2>
-            <p className="md:text-18px text-18px-mobile md:px-0 px-6 text-soft-black-text">
+            <p className="md:text-18px text-18px-mobile text-justify md:px-0 px-6 text-soft-black-text">
               {overlayDataObj[language]?.text}
             </p>
           </div>
