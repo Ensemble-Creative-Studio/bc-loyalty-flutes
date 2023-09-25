@@ -26,8 +26,16 @@ export default function RootLayout({ children }) {
         <meta name="description" content={metadata.description} />
       </head>
       <body className={inter.className}>
-      <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N57B4DV"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+      <noscript>
+  <iframe 
+    src="https://www.googletagmanager.com/ns.html?id=GTM-N57B4DV"
+    height="0" 
+    width="0" 
+    style={{display: "none", visibility: "hidden"}}
+  ></iframe>
+</noscript>
+{children}
+
         {children}
        
       </body>
