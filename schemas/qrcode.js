@@ -76,5 +76,10 @@ export default {
         },
       ],
     },
+    {
+      name: "petitePhrase",
+      type: "string",
+      title: "Disclamer ",
+    },
   ],
 };

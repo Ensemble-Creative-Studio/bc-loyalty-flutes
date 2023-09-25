@@ -8,7 +8,7 @@ export default {
     },
     i18n: {
       base: 'fr',
-      languages: ['fr', 'en','de',],
+      languages: ['fr', 'en','de','ja'],
       fieldNames: {
         lang: '__i18n_lang',
         references: '__i18n_refs',
@@ -23,7 +23,11 @@ export default {
         title: 'Page Footer',
         of: [{ type: 'reference', to: [{ type: 'pageFooter' }] }],
       },
-
+      {
+        name: 'ariane',
+        type: 'string',
+        title: 'Cette opération est rendue possible par Arianee, leader des solutions d’engagement web3 pour les marques',
+      },
     ],
   };
   

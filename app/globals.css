@@ -164,6 +164,9 @@ border: 1px solid #F7A674;
   transform: translateY(-100%);
   transition: 0.2s ease all;
 }
+.max-widthch{
+  max-width: 20ch;
+}
 }
 
 

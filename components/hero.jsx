@@ -23,8 +23,8 @@ export default function Hero({ heroData }) {
           autoPlay
           loop
         />
-        <div className="md:col-span-8 col-span-11 flex items-end md:pb-36 pb-12">
-        <h1 className="md:text-92px text-41x text-soft-white "
+        <div className="md:col-span-12 col-span-11 flex items-end md:pb-36 pb-12">
+        <h1 className="md:text-92px text-41x text-soft-white max-widthch"
         >{overlayDataObj[language]?.herotext}</h1>
         </div>
 

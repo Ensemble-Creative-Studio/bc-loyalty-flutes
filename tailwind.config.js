@@ -62,6 +62,13 @@ module.exports = {
             letterSpacing:'0.01em'
           },
         ],
+        "27pxNoBold": [
+          "2.7rem",
+          {
+            lineHeight: "150%",
+            letterSpacing:'0.01em'
+          },
+        ],
         "27px-narrow": [
           "2.7rem",
           {
