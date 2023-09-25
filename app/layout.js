@@ -12,8 +12,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Head>
-      <Script>
+      <head>
+      <Script id="my-script">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         </Script>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-      </Head>
+      </head>
       <body className={inter.className}>
       <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N57B4DV"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
