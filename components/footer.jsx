@@ -23,7 +23,6 @@ export default  function Footer({footerData,pageData}) {
     }
     overlayDataObj2[entry.__i18n_lang].push(entry);
   }
-  console.log(overlayDataObj2[language][0])
   return (
     <div className="bg-soft-black">
   <div className="bg-soft-black w-full flex flex-col justify-center h-52 md:py-16  md:px-36 md:flex-row-reverse md:justify-between md:items-center md:h-24">
@@ -39,7 +38,8 @@ export default  function Footer({footerData,pageData}) {
       </div>
       <p className="text-mid-grey md:text-15px text-center text-14px-cta pt-4  md:pt-0">© 2023 Groupe Buffet Crampon</p>
     </div>
-    <p className="text-mid-grey md:text-15px  text-14px-cta text-center md:text-left   md:px-36  md:pt-0 pb-8 md:pb-4">{overlayDataObj2[language][0]?.ariane}</p>
+    <p className="text-mid-grey md:text-15px  text-14px-cta text-center md:text-left   md:px-36  md:pt-0 pb-8 md:pb-4">  {overlayDataObj2 && overlayDataObj2[language] && overlayDataObj2[language][0] && overlayDataObj2[language][0].ariane}
+</p>
 
     </div>
   
