@@ -18,6 +18,33 @@ export default {
   },
   fields: [
     {
+      name: "code",
+      type: "array",
+      title: "Choix QR Code",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "titre",
+              type: "string",
+              title: "Titre QR code",
+            },
+            {
+              name: "buttonUrl",
+              type: "url",
+              title: 'url du bouton "obtenir votre nft buffet crampon"',
+            },
+            {
+              name: "buttonCertificat",
+              type: "string",
+              title: 'Texte du bouton "obtenir votre nft buffet crampon"',
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: "image",
       type: "image",
       title: "Image",

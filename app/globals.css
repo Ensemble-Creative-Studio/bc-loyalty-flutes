@@ -170,9 +170,9 @@ border: 1px solid #F7A674;
 }
 
 
-/* NFT */
+/* intro */
 
-.nft .grid-item:nth-child(2) {
+.grid-item:nth-child(2) {
   grid-column-start: 7;
-  grid-column-end: 11;
+  /* grid-column-end: 13; */
 }

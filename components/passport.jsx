@@ -46,7 +46,43 @@ export default function Passport({ passportData }) {
     dialogTriggerRef.current.click();
   };
   return (
-    <div className=" md:pt-24 md:pb-48 pt-24">
+    <div className=" md:pt-24 md:pb-48 pt-24 flex flex-col gap-24">
+      <div className="md:custom-grid flex flex-col relative px-6">
+        {overlayDataObj[language]?.code.map((code, index) => (
+          <div className="md:col-span-5 flex flex-col grid-item" key={index}>
+            <h4 className="md:text-27pxNoBold text-17px text-soft-black-text md:pb-6 pb-4 md:w-4/5 ">
+              {code.titre}
+            </h4>
+            <div className="flex md:items-center">
+              <div className="flex">
+                {index === 0 ? (
+                  <div className="relative overflow-hidden bg-bronze border border-bronze md:w-auto md:hover:bg-white md:transition-all group md:ml-0 md:h-auto text-14px-cta md:my-0 my-10 w-full md:mr-0 mr-6">
+                    <p onClick={handleCertificatButtonClick}  className="text-center md:text-15px text-soft-white uppercase md:p-8 py-8 px-4 md:group-hover:hover-translated-p transition-all">
+                      {code?.buttonCertificat}
+                    </p>
+                    <p onClick={handleCertificatButtonClick} className="text-center md:text-15px md:w-full md:text-bronze uppercase md:p-8 hidden md:block md:cursor-pointer md:absolute md:not-hovered-p md:group-hover:hover-translated-p">
+                      {code?.buttonCertificat}
+                    </p>
+                  </div>
+                ) : (
+                  <Link
+                    target="_blank"
+                    href={code.buttonUrl}
+                    className="relative overflow-hidden bg-bronze border border-bronze md:w-auto md:hover:bg-white md:transition-all group md:ml-0 md:h-auto text-14px-cta md:my-0 my-10 w-full md:mr-0 mr-6"
+                  >
+                    <p className="text-center md:text-15px text-soft-white uppercase md:p-8 py-8 px-4 md:group-hover:hover-translated-p transition-all">
+                      {code?.buttonCertificat}
+                    </p>
+                    <p className="text-center md:text-15px md:w-full md:text-bronze uppercase md:p-8 hidden md:block md:cursor-pointer md:absolute md:not-hovered-p md:group-hover:hover-translated-p">
+                      {code?.buttonCertificat}
+                    </p>
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
       <div className="md:custom-grid flex flex-col relative ">
         <div className="md:col-span-5  flex md:block justify-center">
           <Image
