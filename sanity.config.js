@@ -128,11 +128,11 @@ export default defineConfig({
             sites: [
            
               {
-                // title: 'BC - Loyalty',
-                // apiId: '7dd58f6f-bc1e-4120-b5c9-f0cd38dc3d3c',
-                // buildHookId: '64c7d4e7c9caf116fe130458',
-                // name: 'zingy-dango-613832.netlify',
-                // url:'https://zingy-dango-613832.netlify.app/'
+                title: process.env.NEXT_PUBLIC_NETLIFY_PROJECT_TITLE,
+                apiId: process.env.NEXT_PUBLIC_NETLIFY_API_ID,
+                buildHookId: process.env.NEXT_PUBLIC_NETLIFY_BUILD_HOOK_ID,
+                name: process.env.NEXT_PUBLIC_NETLIFY_HOOK_NAME,
+                url: process.env.NEXT_PUBLIC_NETLIFY_PROJECT_URL
               }
             ]
         })
