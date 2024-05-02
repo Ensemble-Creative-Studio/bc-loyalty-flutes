@@ -153,8 +153,8 @@ h5 {
   
 }
 .rollupHover .first{
-  background: #F7A674;
-border: 1px solid #F7A674;
+  background: #f05050;
+border: 1px solid #f05050;
 }
 .rollupHover {
   transition: 0.2s ease all;

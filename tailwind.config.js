@@ -175,7 +175,7 @@ module.exports = {
         "mid-grey": "#726F6A",
         "soft-black-text": "#32312F",
         "spec-black": "#13181F",
-      "bronze": "#F7A674",
+        "bronze": "#f05050",
       },
     },
   },
