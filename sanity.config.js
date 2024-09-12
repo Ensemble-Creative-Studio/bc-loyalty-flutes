@@ -140,7 +140,7 @@ export default defineConfig({
     }),
   ], {
     // .. your i18n config, example:
-    languages: ['fr', 'en', 'de','ja'],
+    languages: ['fr', 'en'],
   }),
 
   schema: {
