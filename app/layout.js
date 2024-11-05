@@ -13,7 +13,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-      <Script id="my-script">
+        <Script id="my-script">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -25,19 +25,18 @@ export default function RootLayout({ children }) {
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
       </head>
+
       <body className={inter.className}>
-      <noscript>
-  <iframe 
-    src="https://www.googletagmanager.com/ns.html?id=GTM-N57B4DV"
-    height="0" 
-    width="0" 
-    style={{display: "none", visibility: "hidden"}}
-  ></iframe>
-</noscript>
-{children}
-
-
-       
+        <noscript>
+          <iframe 
+            src="https://www.googletagmanager.com/ns.html?id=GTM-N57B4DV"
+            height="0" 
+            width="0" 
+            style={{display: "none", visibility: "hidden"}}
+          ></iframe>
+        </noscript>
+        
+        {children}
       </body>
     </html>
   );

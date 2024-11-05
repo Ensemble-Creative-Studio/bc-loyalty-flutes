@@ -48,7 +48,8 @@ export default function Header({}) {
           transition: "transform 0.2s ease",
         }}
       >
-        <div className="flex-1"></div>
+        {/* <div className="flex-1"></div> */}
+
         <div className="logo w-28 h-28 md:h-48 md:w-48 md:flex-1 ">
           <Image
             className="w-full h-full object-contain"
@@ -58,7 +59,7 @@ export default function Header({}) {
           />
         </div>
 
-        <div className="icon-langue flex-1 flex justify-end md:relative md:-top-10 cursor-pointer md:flex-1">
+        {/* <div className="icon-langue flex-1 flex justify-end md:relative md:-top-10 cursor-pointer md:flex-1">
           <Image
             className="object-contain w-7 h-7 md:h-9 md:w-9 z-30"
             width={18}
@@ -105,7 +106,7 @@ export default function Header({}) {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
       </header>
     </div>
   );
